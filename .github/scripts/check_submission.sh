@@ -79,10 +79,10 @@ SOURCE_FILES=$(find . -maxdepth 2 \( -name '*.cpp' -o -name '*.h' -o -name '*.hp
 grep -E -i -q 'cin\s*>>|getline\s*\(' $SOURCE_FILES   || fail "Chưa thấy dấu hiệu nhập từ bàn phím trong source code. Q2 yêu cầu cho phép người dùng nhập plaintext và key."
 pass "Có dấu hiệu nhập dữ liệu từ bàn phím trong source code."
 
-if grep -R -n "TODO_STUDENT" README.md report-1page.md tests/; then
-  fail "Vẫn còn placeholder TODO_STUDENT trong README/report/tests. Hãy hoàn thiện trước khi nộp."
+if grep -R -n "TODO" README.md report-1page.md tests/; then
+  fail "Vẫn còn placeholder TODO trong README/report/tests. Hãy hoàn thiện trước khi nộp."
 fi
-pass "Không còn placeholder TODO_STUDENT trong README/report/tests."
+pass "Không còn placeholder TODO trong README/report/tests."
 
 if [[ -x ./des || -f ./des ]]; then
   pass "Đã có file thực thi sau bước build."
